@@ -158,12 +158,7 @@ function validateSemantics(doc: ADFDocument): string[] {
 /**
  * Validate a single node
  */
-function validateNode(
-  node: ADFNode,
-  path: string,
-  errors: string[],
-  isBlockLevel: boolean
-): void {
+function validateNode(node: ADFNode, path: string, errors: string[], isBlockLevel: boolean): void {
   // Check node type is valid
   const isValidType = isBlockLevel
     ? validBlockNodeTypes.has(node.type) || validInlineNodeTypes.has(node.type)

@@ -76,9 +76,7 @@ describe('adfToMarkdown', () => {
         content: [
           {
             type: 'paragraph',
-            content: [
-              { type: 'text', text: 'bold', marks: [{ type: 'strong' }] },
-            ],
+            content: [{ type: 'text', text: 'bold', marks: [{ type: 'strong' }] }],
           },
         ],
       };
@@ -123,9 +121,7 @@ describe('adfToMarkdown', () => {
         content: [
           {
             type: 'paragraph',
-            content: [
-              { type: 'text', text: 'strikethrough', marks: [{ type: 'strike' }] },
-            ],
+            content: [{ type: 'text', text: 'strikethrough', marks: [{ type: 'strike' }] }],
           },
         ],
       };
@@ -199,15 +195,11 @@ describe('adfToMarkdown', () => {
             content: [
               {
                 type: 'listItem',
-                content: [
-                  { type: 'paragraph', content: [{ type: 'text', text: 'Item 1' }] },
-                ],
+                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Item 1' }] }],
               },
               {
                 type: 'listItem',
-                content: [
-                  { type: 'paragraph', content: [{ type: 'text', text: 'Item 2' }] },
-                ],
+                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Item 2' }] }],
               },
             ],
           },
@@ -227,15 +219,11 @@ describe('adfToMarkdown', () => {
             content: [
               {
                 type: 'listItem',
-                content: [
-                  { type: 'paragraph', content: [{ type: 'text', text: 'First' }] },
-                ],
+                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'First' }] }],
               },
               {
                 type: 'listItem',
-                content: [
-                  { type: 'paragraph', content: [{ type: 'text', text: 'Second' }] },
-                ],
+                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Second' }] }],
               },
             ],
           },
@@ -257,16 +245,12 @@ describe('adfToMarkdown', () => {
               {
                 type: 'taskItem',
                 attrs: { localId: 'task-1', state: 'TODO' },
-                content: [
-                  { type: 'paragraph', content: [{ type: 'text', text: 'Todo item' }] },
-                ],
+                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Todo item' }] }],
               },
               {
                 type: 'taskItem',
                 attrs: { localId: 'task-2', state: 'DONE' },
-                content: [
-                  { type: 'paragraph', content: [{ type: 'text', text: 'Done item' }] },
-                ],
+                content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Done item' }] }],
               },
             ],
           },
@@ -285,9 +269,7 @@ describe('adfToMarkdown', () => {
         content: [
           {
             type: 'blockquote',
-            content: [
-              { type: 'paragraph', content: [{ type: 'text', text: 'Quoted text' }] },
-            ],
+            content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Quoted text' }] }],
           },
         ],
       };
@@ -322,15 +304,11 @@ describe('adfToMarkdown', () => {
                 content: [
                   {
                     type: 'tableHeader',
-                    content: [
-                      { type: 'paragraph', content: [{ type: 'text', text: 'Header 1' }] },
-                    ],
+                    content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Header 1' }] }],
                   },
                   {
                     type: 'tableHeader',
-                    content: [
-                      { type: 'paragraph', content: [{ type: 'text', text: 'Header 2' }] },
-                    ],
+                    content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Header 2' }] }],
                   },
                 ],
               },
@@ -339,15 +317,11 @@ describe('adfToMarkdown', () => {
                 content: [
                   {
                     type: 'tableCell',
-                    content: [
-                      { type: 'paragraph', content: [{ type: 'text', text: 'Cell 1' }] },
-                    ],
+                    content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Cell 1' }] }],
                   },
                   {
                     type: 'tableCell',
-                    content: [
-                      { type: 'paragraph', content: [{ type: 'text', text: 'Cell 2' }] },
-                    ],
+                    content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Cell 2' }] }],
                   },
                 ],
               },
@@ -388,9 +362,7 @@ describe('adfToMarkdown', () => {
         content: [
           {
             type: 'paragraph',
-            content: [
-              { type: 'mention', attrs: { id: 'user123', text: 'John Doe' } },
-            ],
+            content: [{ type: 'mention', attrs: { id: 'user123', text: 'John Doe' } }],
           },
         ],
       };
@@ -409,9 +381,7 @@ describe('adfToMarkdown', () => {
         content: [
           {
             type: 'paragraph',
-            content: [
-              { type: 'emoji', attrs: { shortName: ':smile:', text: '😄' } },
-            ],
+            content: [{ type: 'emoji', attrs: { shortName: ':smile:', text: '😄' } }],
           },
         ],
       };

@@ -20,7 +20,9 @@ describe('Smart Links', () => {
     });
 
     it('should detect Confluence links as block', () => {
-      expect(detectSmartLinkType('https://company.atlassian.net/wiki/spaces/DOC/pages/123')).toBe('block');
+      expect(detectSmartLinkType('https://company.atlassian.net/wiki/spaces/DOC/pages/123')).toBe(
+        'block'
+      );
     });
 
     it('should return link for non-Atlassian URLs', () => {
@@ -74,7 +76,9 @@ describe('Smart Links', () => {
 
   describe('defaultSmartLinkResolver', () => {
     it('should use detectSmartLinkType', () => {
-      expect(defaultSmartLinkResolver('https://company.atlassian.net/browse/PROJ-123')).toBe('inline');
+      expect(defaultSmartLinkResolver('https://company.atlassian.net/browse/PROJ-123')).toBe(
+        'inline'
+      );
       expect(defaultSmartLinkResolver('https://example.com')).toBe('link');
     });
   });
@@ -109,8 +113,12 @@ describe('Smart Links', () => {
 
   describe('atlassianInlineResolver', () => {
     it('should return inline for all Atlassian URLs', () => {
-      expect(atlassianInlineResolver('https://company.atlassian.net/wiki/spaces/DOC')).toBe('inline');
-      expect(atlassianInlineResolver('https://company.atlassian.net/browse/PROJ-123')).toBe('inline');
+      expect(atlassianInlineResolver('https://company.atlassian.net/wiki/spaces/DOC')).toBe(
+        'inline'
+      );
+      expect(atlassianInlineResolver('https://company.atlassian.net/browse/PROJ-123')).toBe(
+        'inline'
+      );
     });
 
     it('should return link for non-Atlassian URLs', () => {

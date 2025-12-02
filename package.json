@@ -1,5 +1,5 @@
 {
-  "name": "@faulander/markdown-adf-converter",
+  "name": "@faulander/md2adf",
   "version": "1.0.0",
   "description": "Bidirectional converter between Markdown and Atlassian Document Format (ADF) with support for mentions, emojis, and smart links.",
   "type": "module",
@@ -43,7 +43,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/faulander/markdown-adf-converter"
+    "url": "https://github.com/faulander/md2adf"
   },
   "keywords": [
     "markdown",

@@ -80,7 +80,9 @@ describe('markdownToAdf', () => {
       expect(result.content[0].type).toBe('paragraph');
       const inlineCard = result.content[0].content?.[0];
       expect(inlineCard?.type).toBe('inlineCard');
-      expect((inlineCard?.attrs as { url: string })?.url).toBe('https://company.atlassian.net/browse/PROJ-123');
+      expect((inlineCard?.attrs as { url: string })?.url).toBe(
+        'https://company.atlassian.net/browse/PROJ-123'
+      );
     });
 
     it('should not convert non-Atlassian links to smart links', () => {
@@ -154,7 +156,7 @@ describe('markdownToAdf', () => {
   describe('mentions', () => {
     it('should convert mentions with default resolver', () => {
       const result = markdownToAdf('Hello @johndoe');
-      const mention = result.content[0].content?.find(n => n.type === 'mention');
+      const mention = result.content[0].content?.find((n) => n.type === 'mention');
       expect(mention?.type).toBe('mention');
       expect((mention?.attrs as { id: string })?.id).toBe('johndoe');
     });
@@ -163,7 +165,7 @@ describe('markdownToAdf', () => {
       const result = markdownToAdf('Hello @johndoe', {
         mentionResolver: (username) => ({ id: `user-${username}`, text: `@${username}` }),
       });
-      const mention = result.content[0].content?.find(n => n.type === 'mention');
+      const mention = result.content[0].content?.find((n) => n.type === 'mention');
       expect((mention?.attrs as { id: string })?.id).toBe('user-johndoe');
     });
   });
@@ -171,14 +173,14 @@ describe('markdownToAdf', () => {
   describe('emojis', () => {
     it('should convert emoji shortcodes', () => {
       const result = markdownToAdf('Hello :smile:');
-      const emoji = result.content[0].content?.find(n => n.type === 'emoji');
+      const emoji = result.content[0].content?.find((n) => n.type === 'emoji');
       expect(emoji?.type).toBe('emoji');
       expect((emoji?.attrs as { shortName: string })?.shortName).toBe(':smile:');
     });
 
     it('should keep invalid emoji as text', () => {
       const result = markdownToAdf('Hello :notanemoji:');
-      const hasEmoji = result.content[0].content?.some(n => n.type === 'emoji');
+      const hasEmoji = result.content[0].content?.some((n) => n.type === 'emoji');
       expect(hasEmoji).toBeFalsy();
     });
   });

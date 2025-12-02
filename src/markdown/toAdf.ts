@@ -17,10 +17,7 @@ import { defaultSmartLinkResolver } from '../smartLinks/resolver.js';
 /**
  * Convert Markdown string to ADF document
  */
-export function markdownToAdf(
-  markdown: string,
-  options: MarkdownToADFOptions = {}
-): ADFDocument {
+export function markdownToAdf(markdown: string, options: MarkdownToADFOptions = {}): ADFDocument {
   const opts = { ...defaultMarkdownToADFOptions, ...options };
   const tokens = parseMarkdown(markdown);
   const content = convertTokens(tokens, opts);
@@ -684,7 +681,7 @@ function processTextContent(
   options: MarkdownToADFOptions
 ): ADFNode[] {
   const nodes: ADFNode[] = [];
-  let remaining = text;
+  const remaining = text;
 
   // Pattern to match mentions and emojis
   const pattern = /(@\w+|:[a-zA-Z0-9_+-]+:)/g;

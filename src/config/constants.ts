@@ -11,7 +11,7 @@ export const MENTION_WITH_ID_PATTERN = /@\[([^\]]+)\]\(([^)]+)\)/g;
 export const EMOJI_PATTERN = /:([a-zA-Z0-9_+-]+):/g;
 
 // ADF version
-export const ADF_VERSION = 1 as const;
+export const ADF_VERSION = 1;
 
 // Supported ADF node types
 export const ADF_BLOCK_NODES = [

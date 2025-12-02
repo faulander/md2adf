@@ -53,9 +53,7 @@ export function parseMention(
 /**
  * Create a custom mention resolver that maps usernames to Atlassian account IDs
  */
-export function createMentionResolver(
-  userMapping: Record<string, string>
-): MentionResolver {
+export function createMentionResolver(userMapping: Record<string, string>): MentionResolver {
   return (username: string) => {
     const id = userMapping[username.toLowerCase()];
     if (id) {

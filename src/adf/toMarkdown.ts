@@ -5,10 +5,7 @@ import { InvalidADFError } from '../common/errors.js';
 /**
  * Convert ADF document to Markdown string
  */
-export function adfToMarkdown(
-  adf: ADFDocument,
-  options: ADFToMarkdownOptions = {}
-): string {
+export function adfToMarkdown(adf: ADFDocument, options: ADFToMarkdownOptions = {}): string {
   const opts = { ...defaultADFToMarkdownOptions, ...options };
 
   if (!adf || adf.type !== 'doc') {
@@ -31,11 +28,7 @@ export function adfToMarkdown(
 /**
  * Convert a single ADF node to Markdown
  */
-function convertNode(
-  node: ADFNode,
-  options: ADFToMarkdownOptions,
-  depth: number
-): string | null {
+function convertNode(node: ADFNode, options: ADFToMarkdownOptions, depth: number): string | null {
   switch (node.type) {
     case 'paragraph':
       return convertParagraph(node, options);
@@ -110,11 +103,7 @@ function convertCodeBlock(node: ADFNode): string {
 /**
  * Convert blockquote node
  */
-function convertBlockquote(
-  node: ADFNode,
-  options: ADFToMarkdownOptions,
-  depth: number
-): string {
+function convertBlockquote(node: ADFNode, options: ADFToMarkdownOptions, depth: number): string {
   const content = node.content || [];
   const lines: string[] = [];
 
@@ -136,11 +125,7 @@ function convertBlockquote(
 /**
  * Convert bullet list node
  */
-function convertBulletList(
-  node: ADFNode,
-  options: ADFToMarkdownOptions,
-  depth: number
-): string {
+function convertBulletList(node: ADFNode, options: ADFToMarkdownOptions, depth: number): string {
   const items = node.content || [];
   const indent = '  '.repeat(depth);
   const lines: string[] = [];
@@ -156,11 +141,7 @@ function convertBulletList(
 /**
  * Convert ordered list node
  */
-function convertOrderedList(
-  node: ADFNode,
-  options: ADFToMarkdownOptions,
-  depth: number
-): string {
+function convertOrderedList(node: ADFNode, options: ADFToMarkdownOptions, depth: number): string {
   const items = node.content || [];
   const indent = '  '.repeat(depth);
   const startOrder = (node.attrs?.order as number) || 1;
@@ -177,11 +158,7 @@ function convertOrderedList(
 /**
  * Convert task list node
  */
-function convertTaskList(
-  node: ADFNode,
-  options: ADFToMarkdownOptions,
-  depth: number
-): string {
+function convertTaskList(node: ADFNode, options: ADFToMarkdownOptions, depth: number): string {
   const items = node.content || [];
   const indent = '  '.repeat(depth);
   const lines: string[] = [];

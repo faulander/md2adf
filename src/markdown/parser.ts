@@ -28,11 +28,23 @@ export function getMarkdownItInstance(): MarkdownIt {
 /**
  * Create a custom markdown-it instance with specific options
  */
-export function createMarkdownParser(options?: MarkdownIt.Options): MarkdownIt {
-  return new MarkdownIt({
+export function createMarkdownParser(customOptions?: {
+  html?: boolean;
+  xhtmlOut?: boolean;
+  breaks?: boolean;
+  langPrefix?: string;
+  linkify?: boolean;
+  typographer?: boolean;
+  quotes?: string;
+  highlight?: (str: string, lang: string) => string;
+}): MarkdownIt {
+  const instance = new MarkdownIt('default', {
     html: false,
     linkify: true,
     typographer: false,
-    ...options,
   });
+  if (customOptions) {
+    instance.set(customOptions);
+  }
+  return instance;
 }

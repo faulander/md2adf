@@ -14,7 +14,12 @@ export {
 } from './adf/validators.js';
 
 // Smart links
-export { detectSmartLinkType, isAtlassianUrl, extractJiraIssueKey, extractConfluencePageInfo } from './smartLinks/detector.js';
+export {
+  detectSmartLinkType,
+  isAtlassianUrl,
+  extractJiraIssueKey,
+  extractConfluencePageInfo,
+} from './smartLinks/detector.js';
 export {
   defaultSmartLinkResolver,
   createSmartLinkResolver,
