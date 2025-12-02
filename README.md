@@ -1,4 +1,4 @@
-# @faulander/markdown-adf-converter
+# @faulander/md2adf
 
 Bidirectional converter between **Markdown** and **Atlassian Document Format (ADF)** with built-in support for mentions, emojis, and smart links.
 
@@ -16,7 +16,7 @@ Bidirectional converter between **Markdown** and **Atlassian Document Format (AD
 ## Installation
 
 ```bash
-npm install @faulander/markdown-adf-converter
+npm install @faulander/md2adf
 ```
 
 ## Quick Start
@@ -24,7 +24,7 @@ npm install @faulander/markdown-adf-converter
 ### Markdown to ADF
 
 ```typescript
-import { markdownToAdf } from '@faulander/markdown-adf-converter';
+import { markdownToAdf } from '@faulander/md2adf';
 
 const markdown = `
 # Hello World
@@ -44,7 +44,7 @@ console.log(JSON.stringify(adf, null, 2));
 ### ADF to Markdown
 
 ```typescript
-import { adfToMarkdown } from '@faulander/markdown-adf-converter';
+import { adfToMarkdown } from '@faulander/md2adf';
 
 const adf = {
   version: 1,
@@ -73,7 +73,7 @@ console.log(markdown); // **Hello** World!
 Converts a Markdown string to an ADF document.
 
 ```typescript
-import { markdownToAdf } from '@faulander/markdown-adf-converter';
+import { markdownToAdf } from '@faulander/md2adf';
 
 const adf = markdownToAdf('# Hello World', {
   enableSmartLinks: true,
@@ -92,7 +92,7 @@ const adf = markdownToAdf('# Hello World', {
 Converts an ADF document to a Markdown string.
 
 ```typescript
-import { adfToMarkdown } from '@faulander/markdown-adf-converter';
+import { adfToMarkdown } from '@faulander/md2adf';
 
 const markdown = adfToMarkdown(adfDocument, {
   mentionFormatter: (id, text) => `@${text || id}`
@@ -111,7 +111,7 @@ import {
   detectSmartLinkType,
   isAtlassianUrl,
   createSmartLinkResolver
-} from '@faulander/markdown-adf-converter';
+} from '@faulander/md2adf';
 
 // Detect link type
 detectSmartLinkType('https://company.atlassian.net/browse/PROJ-123'); // 'inline'
@@ -133,7 +133,7 @@ import {
   createMentionResolver,
   createMentionFormatter,
   parseMention
-} from '@faulander/markdown-adf-converter';
+} from '@faulander/md2adf';
 
 // Create resolver with user mapping
 const resolver = createMentionResolver({
@@ -157,7 +157,7 @@ import {
   getEmojiShortname,
   isValidEmoji,
   replaceEmojiShortnames
-} from '@faulander/markdown-adf-converter';
+} from '@faulander/md2adf';
 
 getEmojiUnicode('smile'); // '😄'
 getEmojiShortname('😄'); // 'smile'
@@ -168,7 +168,7 @@ replaceEmojiShortnames('Hello :wave:!'); // 'Hello 👋!'
 ### Validation
 
 ```typescript
-import { validateADFDocument, assertValidADF } from '@faulander/markdown-adf-converter';
+import { validateADFDocument, assertValidADF } from '@faulander/md2adf';
 
 // Validate and get errors
 const result = validateADFDocument(adf);
@@ -214,7 +214,7 @@ import type {
   ADFToMarkdownOptions,
   MentionResolver,
   SmartLinkResolver
-} from '@faulander/markdown-adf-converter';
+} from '@faulander/md2adf';
 ```
 
 ## Error Handling
@@ -225,7 +225,7 @@ import {
   InvalidMarkdownError,
   InvalidADFError,
   SchemaValidationError
-} from '@faulander/markdown-adf-converter';
+} from '@faulander/md2adf';
 
 try {
   const adf = markdownToAdf(markdown);
