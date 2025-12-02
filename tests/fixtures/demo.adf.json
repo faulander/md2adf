@@ -1,0 +1,264 @@
+{
+  "version": 1,
+  "type": "doc",
+  "content": [
+    {
+      "type": "heading",
+      "attrs": { "level": 1 },
+      "content": [{ "type": "text", "text": "Demo Document" }]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        { "type": "text", "text": "This is a demonstration of the Markdown to ADF converter." }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 2 },
+      "content": [{ "type": "text", "text": "Features" }]
+    },
+    {
+      "type": "paragraph",
+      "content": [{ "type": "text", "text": "The converter supports:" }]
+    },
+    {
+      "type": "bulletList",
+      "content": [
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Bold text", "marks": [{ "type": "strong" }] },
+                { "type": "text", "text": " and " },
+                { "type": "text", "text": "italic text", "marks": [{ "type": "em" }] }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Inline code", "marks": [{ "type": "code" }] },
+                { "type": "text", "text": " and " },
+                { "type": "text", "text": "strikethrough", "marks": [{ "type": "strike" }] }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Links",
+                  "marks": [{ "type": "link", "attrs": { "href": "https://example.com" } }]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "mention", "attrs": { "id": "mentions", "text": "@mentions" } },
+                { "type": "text", "text": " for users" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "listItem",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Emojis like " },
+                { "type": "emoji", "attrs": { "shortName": ":smile:", "text": "😄" } },
+                { "type": "text", "text": " and " },
+                { "type": "emoji", "attrs": { "shortName": ":thumbsup:", "text": "👍" } }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "Code Blocks" }]
+    },
+    {
+      "type": "codeBlock",
+      "attrs": { "language": "javascript" },
+      "content": [
+        {
+          "type": "text",
+          "text": "function greet(name) {\n  console.log(`Hello, ${name}!`);\n}"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "Task Lists" }]
+    },
+    {
+      "type": "taskList",
+      "attrs": { "localId": "task-list-1" },
+      "content": [
+        {
+          "type": "taskItem",
+          "attrs": { "localId": "task-1", "state": "TODO" },
+          "content": [
+            { "type": "paragraph", "content": [{ "type": "text", "text": "First task" }] }
+          ]
+        },
+        {
+          "type": "taskItem",
+          "attrs": { "localId": "task-2", "state": "DONE" },
+          "content": [
+            { "type": "paragraph", "content": [{ "type": "text", "text": "Completed task" }] }
+          ]
+        },
+        {
+          "type": "taskItem",
+          "attrs": { "localId": "task-3", "state": "TODO" },
+          "content": [
+            { "type": "paragraph", "content": [{ "type": "text", "text": "Another task" }] }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "Tables" }]
+    },
+    {
+      "type": "table",
+      "content": [
+        {
+          "type": "tableRow",
+          "content": [
+            {
+              "type": "tableHeader",
+              "content": [
+                { "type": "paragraph", "content": [{ "type": "text", "text": "Feature" }] }
+              ]
+            },
+            {
+              "type": "tableHeader",
+              "content": [
+                { "type": "paragraph", "content": [{ "type": "text", "text": "Supported" }] }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tableRow",
+          "content": [
+            {
+              "type": "tableCell",
+              "content": [
+                { "type": "paragraph", "content": [{ "type": "text", "text": "Headings" }] }
+              ]
+            },
+            {
+              "type": "tableCell",
+              "content": [
+                { "type": "paragraph", "content": [{ "type": "text", "text": "Yes" }] }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tableRow",
+          "content": [
+            {
+              "type": "tableCell",
+              "content": [
+                { "type": "paragraph", "content": [{ "type": "text", "text": "Lists" }] }
+              ]
+            },
+            {
+              "type": "tableCell",
+              "content": [
+                { "type": "paragraph", "content": [{ "type": "text", "text": "Yes" }] }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tableRow",
+          "content": [
+            {
+              "type": "tableCell",
+              "content": [
+                { "type": "paragraph", "content": [{ "type": "text", "text": "Tables" }] }
+              ]
+            },
+            {
+              "type": "tableCell",
+              "content": [
+                { "type": "paragraph", "content": [{ "type": "text", "text": "Yes" }] }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "Blockquotes" }]
+    },
+    {
+      "type": "blockquote",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            { "type": "text", "text": "This is a blockquote." },
+            { "type": "hardBreak" },
+            { "type": "text", "text": "It can span multiple lines." }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "attrs": { "level": 3 },
+      "content": [{ "type": "text", "text": "Smart Links" }]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        { "type": "text", "text": "Check out this Jira issue: " },
+        {
+          "type": "inlineCard",
+          "attrs": { "url": "https://company.atlassian.net/browse/PROJ-123" }
+        }
+      ]
+    },
+    { "type": "rule" },
+    {
+      "type": "paragraph",
+      "content": [
+        { "type": "text", "text": "That's all folks! " },
+        { "type": "emoji", "attrs": { "shortName": ":wave:", "text": "👋" } }
+      ]
+    }
+  ]
+}
